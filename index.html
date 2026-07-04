@@ -1465,11 +1465,11 @@
             const miniKey = currentProduct.imgKey;
             
             if (miniKey === 'brooklyn') {
-                container.innerHTML = `<img src="https://i.ibb.co/67bzRYmB/image.jpg" alt="${currentProduct.title}" class="w-full h-full object-cover relative z-10" id="main-brooklyn-img">`;
+                container.innerHTML = `<img src="https://i.ibb.co/Fq89N9kC/image.jpg" alt="${currentProduct.title}" class="w-full h-full object-cover relative z-10" id="main-brooklyn-img">`;
                 const img = document.getElementById('main-brooklyn-img');
                 if (img) {
                     img.onerror = function() {
-                        this.src = "https://i.ibb.co/67bzRYmB";
+                        this.src = "https://ibb.co/Fq89N9kC";
                         this.onerror = function() {
                             this.style.display = 'none';
                             container.innerHTML = getDetailedProductSvg('brooklyn');
@@ -1553,7 +1553,7 @@
                     const imgEl = document.getElementById(uniqueId);
                     if (imgEl) {
                         imgEl.onerror = function() {
-                            this.src = "https://i.ibb.co/67bzRYmB";
+                            this.src = "https://ibb.co/Fq89N9kC";
                             this.onerror = function() {
                                 this.style.display = 'none';
                                 this.parentNode.innerHTML = getDetailedProductSvg('brooklyn');
@@ -1561,7 +1561,7 @@
                         };
                     }
                 }, 0);
-                return `<div class="w-full h-full relative"><img id="${uniqueId}" src="https://i.ibb.co/67bzRYmB/image.jpg" class="w-full h-full object-cover absolute inset-0 z-10"></div>`;
+                return `<div class="w-full h-full relative"><img id="${uniqueId}" src="https://i.ibb.co/Fq89N9kC/image.jpg" class="w-full h-full object-cover absolute inset-0 z-10"></div>`;
             }
             return `<div class="w-full h-full">${getDetailedProductSvg(key)}</div>`;
         }
