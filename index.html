@@ -90,6 +90,7 @@
     <div id="app-wrapper" class="w-full max-w-[480px] bg-[#f6f6f6] min-h-screen sm:min-h-[850px] sm:rounded-3xl sm:shadow-2xl overflow-hidden flex flex-col relative border border-gray-200 transition-all duration-300">
         
         <div id="checkout-main-view" class="flex flex-col h-full flex-grow">
+            <!-- Header Tab Navigation -->
             <div class="bg-[#1c1c1c] pt-2.5 px-3 border-b border-gray-200 sticky top-0 z-50 transition-colors duration-300" id="header-bar">
                 <div class="flex items-end h-[42px]">
                     <div id="tab-coach" class="tab-active w-[140px] h-full flex items-center justify-center cursor-pointer transition-all duration-200">
@@ -97,16 +98,18 @@
                     </div>
                     <div id="tab-outlet" class="w-1/2 bg-[#1c1c1c] h-full flex items-center justify-start pl-6 cursor-pointer hover:opacity-90 transition-opacity">
                         <span class="font-serif font-bold text-[12px] tracking-[0.16em] text-white leading-none">
-                            COACH <span class="font-sans text-[8px] font-normal tracking-wide text-gray-300 ml-0.5">OUTLET</span>
+                            COACH <span class="font-sans text-[10px] font-normal tracking-wide text-gray-300 ml-0.5">OUTLET</span>
                         </span>
                     </div>
                 </div>
             </div>
 
+            <!-- Outlet Flash Sale Banner -->
             <div id="outlet-flash-banner" class="hidden bg-red-700 text-white px-4 py-2 text-center text-[11px] font-bold uppercase tracking-widest animate-pulse">
                 Outlet Special: Extra 20% Off Outlet Selections!
             </div>
 
+            <!-- Sticky Cart Status Bar -->
             <div class="bg-white border-b border-gray-200 px-4 py-4 flex justify-between items-center text-sm shadow-sm">
                 <span class="font-semibold text-gray-900 text-[15px] tracking-tight">Your Summary</span>
                 <button id="toggle-top-summary" class="flex items-center gap-1.5 font-normal text-gray-800 focus:outline-none hover:text-black text-[14px]">
@@ -119,6 +122,7 @@
 
             <div class="flex-grow overflow-y-auto no-scrollbar pb-28">
                 
+                <!-- Accelerated Checkout Panel -->
                 <div class="m-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.015)]">
                     <h3 class="text-[16px] font-bold text-gray-950 tracking-tight mb-4">Checkout faster</h3>
                     
@@ -149,7 +153,7 @@
                         <button onclick="selectExpressPayment('shoppay')" class="bg-[#5a31f4] hover:bg-[#4825cf] text-white h-[38px] rounded-full flex items-center justify-center transition shadow-sm">
                             <div class="flex items-center justify-center">
                                 <span class="italic font-extrabold text-[13px] tracking-tight leading-none">shop</span>
-                                <span class="ml-0.5 bg-white/20 text-white text-[7px] font-bold px-1 py-0.5 rounded uppercase tracking-wide leading-none">Pay</span>
+                                <span class="ml-0.5 bg-white/20 text-white text-[7px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide leading-none">Pay</span>
                             </div>
                         </button>
                     </div>
@@ -188,6 +192,7 @@
                     </div>
                 </div>
 
+                <!-- Personal Welcome Header -->
                 <div class="mx-3 my-2.5">
                     <div class="bg-white rounded-2xl border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.015)] p-4 flex items-center justify-center gap-3">
                         <svg class="text-gray-950 stroke-current fill-none" style="width: 28px; height: 28px;" viewBox="0 0 24 24" stroke-width="1.3">
@@ -199,6 +204,7 @@
                     </div>
                 </div>
 
+                <!-- Delivery Details Section -->
                 <div class="m-3 p-4 rounded-2xl border border-gray-100 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.015)]">
                     <div class="flex justify-between items-center mb-4">
                         <div class="flex items-center gap-2.5">
@@ -358,6 +364,7 @@
                         </div>
                     </div>
 
+                    <!-- Payment Option Selectors -->
                     <div class="space-y-4">
                         <div class="flex flex-col py-2.5 border-b border-gray-100">
                             <div class="flex items-center gap-3.5">
@@ -513,14 +520,15 @@
                         </div>
                     </div>
 
+                    <!-- Apple Pay Call to Action (Centering Fix applied) -->
                     <div class="mt-8">
-                        <button id="main-submit-btn" class="w-full bg-black hover:bg-neutral-900 text-white font-medium py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.99] select-none tracking-tight shadow-md hover:shadow-lg border border-neutral-800">
-                            <span id="submit-btn-prefix" class="tracking-widest text-[11px] font-bold uppercase text-gray-300 mr-1.5">Pay with</span>
-                            <div class="flex items-center gap-[2px] justify-center leading-none">
-                                <svg id="submit-btn-apple-logo" class="fill-white w-4 h-5 -translate-y-[1px]" viewBox="0 0 24 24">
+                        <button id="main-submit-btn" class="w-full bg-black hover:bg-neutral-900 text-white font-medium py-4 rounded-full flex items-center justify-center gap-1 transition-all duration-200 active:scale-[0.99] select-none tracking-tight shadow-md hover:shadow-lg border border-neutral-800">
+                            <span id="submit-btn-prefix" class="tracking-widest text-[11px] font-bold uppercase text-gray-300 mr-0.5 select-none">Pay with</span>
+                            <div class="flex items-center gap-[3px] justify-center leading-none">
+                                <svg id="submit-btn-apple-logo" class="fill-white w-4 h-5 -translate-y-[0.5px] block" viewBox="0 0 24 24">
                                     <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.08 16.74 19.67 18.11 18.71 19.5M15.97 4.17C16.63 3.37 17.07 2.28 16.95 1C16 1.04 14.9 1.6 14.24 2.38C13.68 3.04 13.19 4.14 13.34 5.39C14.39 5.47 15.4 4.88 15.97 4.17Z"/>
                                 </svg>
-                                <span id="submit-btn-text" class="font-semibold text-[15px] tracking-tight">Pay</span>
+                                <span id="submit-btn-text" class="font-semibold text-[15px] tracking-tight leading-none self-center">Pay</span>
                             </div>
                         </button>
                     </div>
@@ -567,22 +575,23 @@
                         <p class="text-[11px] text-gray-600 font-semibold">Items in the bag are not held and may sell out</p>
                     </div>
 
+                    <!-- Breakdown Calculations (Dynamic Alignment Fixes applied) -->
                     <div class="space-y-3.5 border-b border-gray-200 pb-4 mb-4">
                         <div class="flex justify-between text-sm">
                             <span class="text-gray-600 font-medium">Subtotal</span>
                             <span id="subtotal-amt" class="font-bold text-gray-900">$295.00</span>
                         </div>
+                        <div id="discount-row" class="hidden flex justify-between text-sm transition-all duration-300">
+                            <span class="text-gray-900 font-bold">Discount</span>
+                            <span id="giftcard-discount-amt" class="font-bold text-red-600">-$0.00</span>
+                        </div>
                         <div id="giftwrap-row" class="hidden justify-between text-sm transition-all duration-300">
                             <span class="text-gray-600 font-medium">Gift Wrap</span>
                             <span class="font-bold text-gray-900">$6.00</span>
                         </div>
-                        <div id="promo-row" class="hidden justify-between text-sm transition-all duration-300">
+                        <div id="promo-row" class="hidden flex justify-between text-sm transition-all duration-300">
                             <span class="text-blue-600 font-semibold">Promo Applied (<span id="promo-label"></span>)</span>
                             <span id="promo-discount-amt" class="font-bold text-blue-600">-$0.00</span>
-                        </div>
-                        <div id="discount-row" class="hidden justify-between text-sm transition-all duration-300">
-                            <span class="text-red-600 font-bold">Gift Card Redeemed</span>
-                            <span id="giftcard-discount-amt" class="font-bold text-red-600">-$0.00</span>
                         </div>
                         <div class="flex justify-between text-sm">
                             <span class="text-gray-600 font-medium">Standard Shipping</span>
@@ -594,12 +603,12 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-between items-baseline mb-4">
+                    <div class="flex justify-between items-end mb-4">
                         <span class="text-[16px] font-bold text-gray-900 uppercase">Total</span>
                         <span id="final-total" class="text-[16px] font-bold text-gray-900 transition-colors duration-300">$323.76</span>
                     </div>
 
-                    <div class="text-[11px] text-gray-600 text-center mb-6 py-2 border-t border-b border-gray-100">
+                    <div class="text-center text-xs text-gray-700 mb-6 py-2 border-t border-b border-gray-100">
                         <span>or as low as</span>
                         <span id="installment-bottom" class="font-bold text-gray-900">$28.01</span><span>/mo. with</span>
                         <span class="inline-flex items-center px-[5px] py-[1px] rounded bg-black text-[#4be475] text-[8px] font-black uppercase tracking-tighter">
@@ -609,6 +618,7 @@
                         <a href="#" class="underline text-gray-500 font-semibold ml-1">Learn more</a>
                     </div>
 
+                    <!-- Footer Shipping badges -->
                     <div class="grid grid-cols-2 gap-4 text-center text-xs py-4 border-b border-gray-100 mb-6">
                         <div class="flex flex-col items-center gap-1.5 p-2 bg-gray-50 rounded-lg">
                             <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
@@ -641,6 +651,7 @@
             </div>
         </div>
 
+        <!-- Simulated loading status -->
         <div id="payment-gateway-loader" class="hidden absolute inset-0 bg-[#fdfdfd] z-50 flex flex-col items-center justify-center p-8 text-center">
             <div class="relative w-24 h-24 mb-6">
                 <div class="absolute inset-0 border-4 border-gray-100 rounded-full"></div>
@@ -662,6 +673,7 @@
             <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-12">Encrypted under SSL 256-bit protocol</p>
         </div>
 
+        <!-- Success Invoice confirmation layout -->
         <div id="payment-success-view" class="hidden absolute inset-0 bg-white z-50 flex flex-col justify-between overflow-y-auto no-scrollbar">
             <canvas id="confetti-canvas" class="absolute inset-0 pointer-events-none w-full h-full"></canvas>
 
@@ -740,7 +752,7 @@
             outlet: {
                 id: 'outlet',
                 title: 'COACH OUTLET',
-                headerBg: '#7f1d1d', // red-900
+                headerBg: '#7f1d1d', // red-950
                 bodyBg: '#f8fafc',
                 accentColor: '#b91c1c',
                 products: [
@@ -945,6 +957,7 @@
             renderDynamicProductThumbnail();
         }
 
+        // --- STREAMING_CHUNK: Controlling cart items... ---
         function changeQuantity(offset) {
             quantity = Math.max(1, quantity + offset);
             
@@ -1139,14 +1152,15 @@
             btnPrefix.style.display = "inline-block";
             flexContainer.style.display = "flex";
             
-            mainSubmitBtn.className = "w-full bg-black hover:bg-neutral-900 text-white font-medium py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.99] select-none tracking-tight shadow-md hover:shadow-lg border border-neutral-800";
+            mainSubmitBtn.className = "w-full bg-black hover:bg-neutral-900 text-white font-medium py-4 rounded-full flex items-center justify-center gap-1 transition-all duration-200 active:scale-[0.99] select-none tracking-tight shadow-md hover:shadow-lg border border-neutral-800";
 
             if (selectedPaymentMethod === 'applepay') {
                 btnPrefix.innerText = "Pay with";
-                btnPrefix.className = "tracking-widest text-[11px] font-bold uppercase text-gray-300 mr-1.5";
+                btnPrefix.className = "tracking-widest text-[11px] font-bold uppercase text-gray-300 mr-0.5 select-none";
                 btnText.innerText = "Pay";
-                btnText.className = "font-semibold text-[15px] tracking-tight";
-                flexContainer.className = "flex items-center gap-[2px] justify-center leading-none";
+                btnText.className = "font-semibold text-[15px] tracking-tight leading-none self-center";
+                flexContainer.className = "flex items-center gap-[3px] justify-center leading-none";
+                appleLogo.className = "fill-white w-4 h-5 -translate-y-[0.5px] block";
             } else if (selectedPaymentMethod === 'paypal') {
                 appleLogo.style.display = "none";
                 btnPrefix.innerText = "PROCEED TO";
@@ -1186,7 +1200,7 @@
             }
         }
 
-        // --- PROMO CODE LOGIC ---
+        // --- STREAMING_CHUNK: Setup promo calculations... ---
         function initPromoListeners() {
             promoHeader.addEventListener('click', () => {
                 const isHidden = promoBody.classList.contains('hidden');
@@ -1218,6 +1232,7 @@
             });
         }
 
+        // --- FORMAT AND SHOW REEDEM FEEDBACK ---
         function showPromoFeedback(message, type) {
             let feedback = document.getElementById('promo-feedback');
             if (!feedback) {
@@ -1274,7 +1289,7 @@
                     redeemNotification.innerHTML = `
                         <div class="flex items-center gap-1.5">
                             <svg class="w-4 h-4 text-green-600 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span>Mock Gift Card loaded successfully! Saved up to -$300.00.</span>
+                            <span>Gift Card Loaded Successfully! Saved up to -$300</span>
                         </div>
                     `;
 
@@ -1385,6 +1400,7 @@
             });
         }
 
+        // --- STREAMING_CHUNK: Trigger simulated transaction receipt animations... ---
         function runSimulatedGateway() {
             const loader = document.getElementById('payment-gateway-loader');
             const loaderTitle = document.getElementById('gateway-status-title');
@@ -1449,13 +1465,15 @@
             const miniKey = currentProduct.imgKey;
             
             if (miniKey === 'brooklyn') {
-                // FIXED: Placed your custom uploaded filename here
-                container.innerHTML = `<img src="cdz39_b4l38_a0.jpg" alt="${currentProduct.title}" class="w-full h-full object-cover relative z-10" id="main-brooklyn-img">`;
+                container.innerHTML = `<img src="https://i.ibb.co/67bzRYmB/image.jpg" alt="${currentProduct.title}" class="w-full h-full object-cover relative z-10" id="main-brooklyn-img">`;
                 const img = document.getElementById('main-brooklyn-img');
                 if (img) {
                     img.onerror = function() {
-                        this.style.display = 'none';
-                        container.innerHTML = getDetailedProductSvg('brooklyn');
+                        this.src = "https://i.ibb.co/67bzRYmB";
+                        this.onerror = function() {
+                            this.style.display = 'none';
+                            container.innerHTML = getDetailedProductSvg('brooklyn');
+                        };
                     };
                 }
             } else {
@@ -1507,3 +1525,98 @@
                         <text x="50" y="55" font-family="'Times New Roman', serif" font-weight="bold" font-size="6" fill="#fff" text-anchor="middle">ROWAN</text>
                     </svg>
                 `;
+            } else if (key === 'wristlet') {
+                return `
+                    <svg class="w-full h-full" viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="#1c1917" />
+                        <rect x="10" y="30" width="80" height="50" rx="4" fill="#a8a29e" />
+                        <line x1="8" y1="35" x2="8" y2="90" stroke="#d4af37" stroke-width="3" />
+                        <text x="50" y="60" font-family="sans-serif" font-weight="900" font-size="6" fill="#1c1917" text-anchor="middle" letter-spacing="1">ZIP</text>
+                    </svg>
+                `;
+            } else { 
+                return `
+                    <svg class="w-full h-full" viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="#e2e8f0" />
+                        <path d="M 20 20 L 80 20 L 65 80 L 35 80 Z" fill="#b91c1c" />
+                        <line x1="50" y1="10" x2="50" y2="20" stroke="#1e293b" stroke-width="4" />
+                        <text x="50" y="52" font-family="'Times New Roman', serif" font-weight="bold" font-size="7" fill="#fff" text-anchor="middle">VAL</text>
+                    </svg>
+                `;
+            }
+        }
+
+        function getMiniThumbnailSvg(key) {
+            if (key === 'brooklyn') {
+                const uniqueId = 'thumb-' + Math.floor(Math.random() * 1000000);
+                setTimeout(() => {
+                    const imgEl = document.getElementById(uniqueId);
+                    if (imgEl) {
+                        imgEl.onerror = function() {
+                            this.src = "https://i.ibb.co/67bzRYmB";
+                            this.onerror = function() {
+                                this.style.display = 'none';
+                                this.parentNode.innerHTML = getDetailedProductSvg('brooklyn');
+                            };
+                        };
+                    }
+                }, 0);
+                return `<div class="w-full h-full relative"><img id="${uniqueId}" src="https://i.ibb.co/67bzRYmB/image.jpg" class="w-full h-full object-cover absolute inset-0 z-10"></div>`;
+            }
+            return `<div class="w-full h-full">${getDetailedProductSvg(key)}</div>`;
+        }
+
+        // --- FULL CONFETTI ENGINE ---
+        function startConfettiExplosion() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.parentNode.clientWidth;
+            canvas.height = canvas.parentNode.clientHeight;
+
+            let particles = [];
+            const colors = ['#f59e0b', '#10b981', '#3b82f6', '#ec4899', '#8b5cf6', '#ef4444'];
+
+            for (let i = 0; i < 120; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    r: Math.random() * 4 + 2,
+                    d: Math.random() * canvas.height,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    tilt: Math.random() * 12 - 6,
+                    tiltAngleIncremental: Math.random() * 0.07 + 0.02,
+                    tiltAngle: 0
+                });
+            }
+
+            let animationId;
+            function drawConfetti() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach((p, idx) => {
+                    p.tiltAngle += p.tiltAngleIncremental;
+                    p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
+                    p.x += Math.sin(p.tiltAngle);
+                    p.tilt = Math.sin(p.tiltAngle - idx/3) * 10;
+
+                    ctx.beginPath();
+                    ctx.lineWidth = p.r;
+                    ctx.strokeStyle = p.color;
+                    ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+                    ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+                    ctx.stroke();
+                });
+
+                particles = particles.filter(p => p.y < canvas.height);
+                
+                if (particles.length > 0) {
+                    animationId = requestAnimationFrame(drawConfetti);
+                } else {
+                    cancelAnimationFrame(animationId);
+                }
+            }
+
+            drawConfetti();
+        }
+    </script>
+</body>
+</html>
