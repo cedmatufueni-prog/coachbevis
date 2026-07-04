@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coach & Coach Outlet - Interactive Checkout</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for premium typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
@@ -89,19 +87,14 @@
 </head>
 <body class="min-h-screen flex justify-center py-0 sm:py-8 transition-colors duration-500 bg-slate-100">
 
-    <!-- Mobile Wrapper Viewport matching phone dimensions exactly -->
     <div id="app-wrapper" class="w-full max-w-[480px] bg-[#f6f6f6] min-h-screen sm:min-h-[850px] sm:rounded-3xl sm:shadow-2xl overflow-hidden flex flex-col relative border border-gray-200 transition-all duration-300">
         
-        <!-- MAIN CHECKOUT FRAME CONTAINER -->
         <div id="checkout-main-view" class="flex flex-col h-full flex-grow">
-            <!-- PREMIUM FOLDER-STYLE TAB HEADER -->
             <div class="bg-[#1c1c1c] pt-2.5 px-3 border-b border-gray-200 sticky top-0 z-50 transition-colors duration-300" id="header-bar">
                 <div class="flex items-end h-[42px]">
-                    <!-- Coach Tab Button -->
                     <div id="tab-coach" class="tab-active w-[140px] h-full flex items-center justify-center cursor-pointer transition-all duration-200">
                         <span class="font-serif font-black text-[15px] tracking-[0.22em] text-black leading-none transform translate-y-[2px]">COACH</span>
                     </div>
-                    <!-- Coach Outlet Tab Button -->
                     <div id="tab-outlet" class="w-1/2 bg-[#1c1c1c] h-full flex items-center justify-start pl-6 cursor-pointer hover:opacity-90 transition-opacity">
                         <span class="font-serif font-bold text-[12px] tracking-[0.16em] text-white leading-none">
                             COACH <span class="font-sans text-[8px] font-normal tracking-wide text-gray-300 ml-0.5">OUTLET</span>
@@ -110,12 +103,10 @@
                 </div>
             </div>
 
-            <!-- OUTLET FLASH BANNER (Visible only in outlet mode) -->
             <div id="outlet-flash-banner" class="hidden bg-red-700 text-white px-4 py-2 text-center text-[11px] font-bold uppercase tracking-widest animate-pulse">
                 Outlet Special: Extra 20% Off Outlet Selections!
             </div>
 
-            <!-- ACCORDION SUMMARY HEADER -->
             <div class="bg-white border-b border-gray-200 px-4 py-4 flex justify-between items-center text-sm shadow-sm">
                 <span class="font-semibold text-gray-900 text-[15px] tracking-tight">Your Summary</span>
                 <button id="toggle-top-summary" class="flex items-center gap-1.5 font-normal text-gray-800 focus:outline-none hover:text-black text-[14px]">
@@ -126,20 +117,15 @@
                 </button>
             </div>
 
-            <!-- SCROLLABLE CONTENT BODY -->
             <div class="flex-grow overflow-y-auto no-scrollbar pb-28">
                 
-                <!-- EXPRESS CHECKOUT SECTION -->
                 <div class="m-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.015)]">
                     <h3 class="text-[16px] font-bold text-gray-950 tracking-tight mb-4">Checkout faster</h3>
                     
-                    <!-- Quick Pay Buttons Grid -->
                     <div class="grid grid-cols-4 gap-1.5 mb-4">
-                        <!-- PayPal -->
                         <button onclick="selectExpressPayment('paypal')" class="bg-[#f6c243] hover:bg-[#ebd024] h-[38px] rounded-full flex items-center justify-center transition shadow-sm">
                             <span class="text-[#003087] font-black italic text-[14px] tracking-tighter">Pay</span><span class="text-[#0079c1] font-black italic text-[14px] tracking-tighter">Pal</span>
                         </button>
-                        <!-- Amazon Pay -->
                         <button onclick="selectExpressPayment('amazon')" class="bg-[#fbc833] hover:bg-[#ebd024] h-[38px] rounded-full flex items-center justify-center transition shadow-sm relative">
                             <div class="flex items-center justify-center leading-none">
                                 <div class="relative inline-flex items-center leading-none">
@@ -152,7 +138,6 @@
                                 <span class="text-[#111111] font-normal text-[13.5px] ml-0.5 select-none">pay</span>
                             </div>
                         </button>
-                        <!-- Apple Pay -->
                         <button onclick="selectExpressPayment('applepay')" class="bg-black hover:bg-gray-900 text-white h-[38px] rounded-full flex items-center justify-center transition shadow-sm">
                             <div class="flex items-center justify-center gap-1">
                                 <svg class="fill-white" style="width: 14px; height: 14px; min-width: 14px; min-height: 14px; display: inline-block; transform: translateY(-0.5px);" viewBox="0 0 24 24">
@@ -161,7 +146,6 @@
                                 <span class="font-bold text-sm tracking-tight leading-none">Pay</span>
                             </div>
                         </button>
-                        <!-- Shop Pay -->
                         <button onclick="selectExpressPayment('shoppay')" class="bg-[#5a31f4] hover:bg-[#4825cf] text-white h-[38px] rounded-full flex items-center justify-center transition shadow-sm">
                             <div class="flex items-center justify-center">
                                 <span class="italic font-extrabold text-[13px] tracking-tight leading-none">shop</span>
@@ -172,11 +156,9 @@
 
                     <p class="text-xs text-gray-500 font-medium mb-3">Pay in installments over time</p>
                     <div class="grid grid-cols-2 gap-2 mb-4">
-                        <!-- Klarna -->
                         <button onclick="selectExpressPayment('klarna')" class="bg-[#fba3c0] hover:bg-[#eaa0b4] text-black h-11 rounded-full flex items-center justify-center shadow-sm transition text-sm font-bold tracking-tight">
                             Klarna
                         </button>
-                        <!-- Afterpay -->
                         <button onclick="selectExpressPayment('afterpay_opt')" class="bg-[#4be475] hover:bg-[#3ec861] text-black h-11 rounded-full flex items-center justify-center shadow-sm transition text-sm font-bold flex items-center gap-1.5 justify-center">
                             <div class="bg-black rounded-[4px] flex items-center justify-center w-[16px] h-[16px] flex-shrink-0">
                                 <span class="text-[#4be475] font-sans text-[10px] font-black leading-none">$</span>
@@ -206,7 +188,6 @@
                     </div>
                 </div>
 
-                <!-- WELCOME USER CARD -->
                 <div class="mx-3 my-2.5">
                     <div class="bg-white rounded-2xl border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.015)] p-4 flex items-center justify-center gap-3">
                         <svg class="text-gray-950 stroke-current fill-none" style="width: 28px; height: 28px;" viewBox="0 0 24 24" stroke-width="1.3">
@@ -218,7 +199,6 @@
                     </div>
                 </div>
 
-                <!-- DELIVERY DETAILS FORM SECTION -->
                 <div class="m-3 p-4 rounded-2xl border border-gray-100 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.015)]">
                     <div class="flex justify-between items-center mb-4">
                         <div class="flex items-center gap-2.5">
@@ -228,9 +208,7 @@
                         <button id="edit-address-btn" class="text-xs font-bold text-black border border-gray-300 rounded px-2.5 py-1 hover:bg-gray-50 transition-colors">Edit</button>
                     </div>
 
-                    <!-- Fields -->
                     <div class="space-y-3">
-                        <!-- Email -->
                         <div class="relative">
                             <label class="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">Email<span class="text-red-500">*</span></label>
                             <input type="email" id="input-email" value="whfjess@gmail.com" readonly class="w-full bg-gray-50 border border-gray-200 rounded-md px-3 py-2.5 text-sm font-medium text-gray-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black pr-10 transition-colors">
@@ -239,7 +217,6 @@
                             </span>
                         </div>
 
-                        <!-- Subscription Consent -->
                         <div class="flex items-start gap-2.5 py-1">
                             <input type="checkbox" checked id="newsletter-consent" class="mt-0.5 rounded border-gray-300 text-black focus:ring-black w-4.5 h-4.5 accent-black">
                             <label for="newsletter-consent" class="text-[11px] text-gray-700 leading-normal font-medium">
@@ -247,7 +224,6 @@
                             </label>
                         </div>
 
-                        <!-- First Name / Last Name Row -->
                         <div class="grid grid-cols-2 gap-3">
                             <div class="relative">
                                 <label class="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">First Name<span class="text-red-500">*</span></label>
@@ -265,7 +241,6 @@
                             </div>
                         </div>
 
-                        <!-- Address -->
                         <div class="relative">
                             <label class="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">Address<span class="text-red-500">*</span></label>
                             <input type="text" id="input-address" value="630 W 5th St" readonly class="w-full bg-gray-50 border border-gray-200 rounded-md px-3 py-2.5 text-sm font-medium text-gray-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black pr-10 transition-colors">
@@ -274,12 +249,10 @@
                             </span>
                         </div>
 
-                        <!-- Apt, Suite (Optional) -->
                         <div>
                             <input type="text" id="input-apt" placeholder="Apt, Suite, Etc. (Optional)" readonly class="w-full bg-gray-50 border border-gray-200 rounded-md px-3 py-2.5 text-sm font-medium text-gray-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors">
                         </div>
 
-                        <!-- City -->
                         <div class="relative">
                             <label class="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">City<span class="text-red-500">*</span></label>
                             <input type="text" id="input-city" value="Los Angeles" readonly class="w-full bg-gray-50 border border-gray-200 rounded-md px-3 py-2.5 text-sm font-medium text-gray-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black pr-10 transition-colors">
@@ -288,7 +261,6 @@
                             </span>
                         </div>
 
-                        <!-- State & Zip -->
                         <div class="grid grid-cols-2 gap-3">
                             <div class="relative">
                                 <label class="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">State<span class="text-red-500">*</span></label>
@@ -313,16 +285,14 @@
                             </div>
                         </div>
 
-                        <!-- Phone -->
                         <div class="relative">
                             <label class="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">Phone<span class="text-red-500">*</span></label>
                             <input type="text" id="input-phone" value="(213) 572-8624" readonly class="w-full bg-gray-50 border border-gray-200 rounded-md px-3 py-2.5 text-sm font-medium text-gray-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black pr-10 transition-colors">
                             <span class="absolute right-3 top-[28px] text-green-600">
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            </span>
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                </span>
                         </div>
 
-                        <!-- Primary Address Checkbox -->
                         <div class="flex items-center gap-2.5 py-1">
                             <input type="checkbox" checked id="primary-address" class="rounded border-gray-300 text-black focus:ring-black w-4.5 h-4.5 accent-black">
                             <label for="primary-address" class="text-xs text-gray-800 font-bold">
@@ -331,13 +301,11 @@
                         </div>
                     </div>
 
-                    <!-- Shipping Methods Info Link -->
                     <div class="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between text-sm text-gray-900 font-bold">
                         <span>Shipping Methods</span>
                         <span class="w-4 h-4 rounded-full border border-gray-400 text-[10px] text-gray-500 font-bold flex items-center justify-center">i</span>
                     </div>
 
-                    <!-- Gift wrapping box option -->
                     <div class="mt-4 p-4 border border-gray-200 rounded-md flex justify-between items-center text-sm">
                         <div class="flex items-center gap-3 text-gray-800">
                             <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
@@ -347,7 +315,6 @@
                     </div>
                 </div>
 
-                <!-- PAYMENT ACCORDIONS AND SELECTORS -->
                 <div class="m-3 p-4 rounded-2xl border border-gray-100 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.015)]">
                     <div class="flex items-center gap-2.5 mb-1">
                         <span class="w-6 h-6 rounded-full bg-black text-white text-[12px] font-bold flex items-center justify-center">2</span>
@@ -355,9 +322,7 @@
                     </div>
                     <p class="text-[14px] text-gray-500 mb-4">Your payment details are encrypted.</p>
 
-                    <!-- Collapsible Modules -->
                     <div class="space-y-3.5 mb-6">
-                        <!-- Apply Promo Accordion Block -->
                         <div>
                             <div id="promo-header" class="bg-[#f8f8f8] rounded-lg px-4 py-3.5 flex justify-between items-center cursor-pointer transition hover:bg-gray-100 select-none">
                                 <span class="text-[#0055b8] font-semibold text-[15px]">Apply Promo</span>
@@ -372,7 +337,6 @@
                             </div>
                         </div>
 
-                        <!-- Add Gift Card Accordion Block -->
                         <div class="bg-[#f8f8f8] rounded-lg p-4">
                             <div id="giftcard-header" class="flex justify-between items-center cursor-pointer select-none">
                                 <span class="text-black font-semibold text-[15px]">Add Gift Card</span>
@@ -380,28 +344,21 @@
                             </div>
                             
                             <div id="giftcard-body" class="mt-4 block">
-                                <!-- Input Fields inside a single custom boundary layout -->
                                 <div class="flex border border-gray-300 rounded-lg overflow-hidden bg-white mb-3 h-12 shadow-sm">
-                                    <!-- Card Number Input -->
                                     <input type="text" id="gift-card-input" placeholder="1234 5678 9012 3456 789" class="w-3/5 px-4 text-sm font-normal text-gray-800 placeholder-gray-300 bg-transparent focus:outline-none border-r border-gray-300" maxlength="23">
-                                    <!-- PIN Input -->
                                     <input type="password" id="gift-card-pin" placeholder="PIN" class="w-2/5 px-4 text-sm font-normal text-gray-800 placeholder-gray-300 bg-transparent focus:outline-none" maxlength="4">
                                 </div>
 
-                                <!-- Redeem Button -->
                                 <button id="gift-card-redeem-btn" class="bg-black hover:bg-gray-900 text-white font-medium text-sm px-6 py-2.5 transition rounded-none select-none">
                                     Redeem
                                 </button>
 
-                                <!-- Custom Alert/Notification Message Box -->
                                 <div id="redeem-notification" class="mt-3 px-3 py-2.5 rounded text-xs font-semibold hidden"></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- DETAILED PAYMENT RADIOS & LOGOS -->
                     <div class="space-y-4">
-                        <!-- Credit Card Radio Option -->
                         <div class="flex flex-col py-2.5 border-b border-gray-100">
                             <div class="flex items-center gap-3.5">
                                 <div class="relative flex items-center">
@@ -410,7 +367,6 @@
                                 </div>
                                 <label for="pay-card" class="cursor-pointer flex items-center justify-between w-full select-none">
                                     <span class="font-bold text-[15px] text-gray-950">Credit / Debit Card</span>
-                                    <!-- Mini credit card logos -->
                                     <div class="flex gap-1.5 opacity-80">
                                         <span class="bg-blue-600 text-white text-[8px] px-1 py-0.5 rounded font-bold">VISA</span>
                                         <span class="bg-red-500 text-white text-[8px] px-1 py-0.5 rounded font-bold">MC</span>
@@ -419,16 +375,12 @@
                                 </label>
                             </div>
 
-                            <!-- ADVANCED FLOATING 3D VIRTUAL CREDIT CARD DRAWER (Interactive) -->
                             <div id="creditcard-form-wrapper" class="hidden mt-4 pl-[34px] space-y-4 transition-all duration-300">
-                                <!-- Card Preview Card (Rotatable) -->
                                 <div class="card-container w-full h-[150px] relative rounded-xl shadow-lg">
                                     <div id="card-inner-box" class="card-inner w-full h-full relative duration-700">
-                                        <!-- Front of Card -->
                                         <div class="card-front w-full h-full absolute top-0 left-0 bg-gradient-to-br from-[#2a2a2a] to-[#0f0f0f] rounded-xl p-4 flex flex-col justify-between text-white border border-gray-800">
                                             <div class="flex justify-between items-start">
                                                 <span class="font-serif tracking-widest text-xs font-bold" id="card-preview-brand">COACH</span>
-                                                <!-- Dynamic Bank Logo (Will detect from typing) -->
                                                 <span class="font-bold text-xs bg-white/20 px-1.5 py-0.5 rounded tracking-tighter" id="card-preview-logo">CARD</span>
                                             </div>
                                             <div class="font-mono text-base tracking-[0.18em] text-center my-1" id="card-preview-number">•••• •••• •••• ••••</div>
@@ -443,7 +395,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Back of Card -->
                                         <div class="card-back w-full h-full absolute top-0 left-0 bg-gradient-to-br from-[#1a1a1a] to-[#2b2b2b] rounded-xl p-4 flex flex-col justify-between text-white border border-gray-800">
                                             <div class="w-full bg-black h-8 -mx-4 mt-2"></div>
                                             <div class="flex justify-end items-center gap-2 mt-2">
@@ -455,7 +406,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Card Input Controls -->
                                 <div class="space-y-3">
                                     <input type="text" id="cc-number" placeholder="Card Number" class="w-full bg-white border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-black font-mono" maxlength="19">
                                     <input type="text" id="cc-name" placeholder="Name on Card" class="w-full bg-white border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-black" value="Jess Brant">
@@ -467,7 +417,6 @@
                             </div>
                         </div>
 
-                        <!-- PayPal Option -->
                         <div class="flex items-center gap-3.5 py-2.5 border-b border-gray-100">
                             <div class="relative flex items-center">
                                 <input type="radio" name="payment-method" id="pay-paypal" value="paypal" class="peer appearance-none w-5 h-5 rounded-full border border-gray-300 checked:border-black focus:outline-none cursor-pointer">
@@ -480,7 +429,6 @@
                             </label>
                         </div>
 
-                        <!-- Amazon Pay -->
                         <div class="flex items-center gap-3.5 py-2.5 border-b border-gray-100">
                             <div class="relative flex items-center">
                                 <input type="radio" name="payment-method" id="pay-amazon" value="amazon" class="peer appearance-none w-5 h-5 rounded-full border border-gray-300 checked:border-black focus:outline-none cursor-pointer">
@@ -500,7 +448,6 @@
                             </label>
                         </div>
 
-                        <!-- Apple Pay -->
                         <div class="py-2.5 border-b border-gray-100">
                             <div class="flex items-center gap-3.5">
                                 <div class="relative flex items-center">
@@ -516,13 +463,11 @@
                                     </div>
                                 </label>
                             </div>
-                            <!-- Explanatory subtext for Apple Pay -->
                             <div id="applepay-explainer" class="mt-3 ml-[34px] text-[12px] text-gray-500 font-normal leading-relaxed">
                                 Once you click the pay button, you will be securely redirected to authorize with Apple Pay.
                             </div>
                         </div>
 
-                        <!-- Shop Pay -->
                         <div class="flex items-center gap-3.5 py-2.5 border-b border-gray-100">
                             <div class="relative flex items-center">
                                 <input type="radio" name="payment-method" id="pay-shoppay" value="shoppay" class="peer appearance-none w-5 h-5 rounded-full border border-gray-300 checked:border-black focus:outline-none cursor-pointer">
@@ -536,7 +481,6 @@
                             </label>
                         </div>
 
-                        <!-- Klarna -->
                         <div class="flex items-center gap-3.5 py-2.5 border-b border-gray-100">
                             <div class="relative flex items-center">
                                 <input type="radio" name="payment-method" id="pay-klarna" value="klarna" class="peer appearance-none w-5 h-5 rounded-full border border-gray-300 checked:border-black focus:outline-none cursor-pointer">
@@ -550,7 +494,6 @@
                             </label>
                         </div>
 
-                        <!-- Afterpay -->
                         <div class="flex items-center gap-3.5 py-2.5 border-b border-gray-100">
                             <div class="relative flex items-center">
                                 <input type="radio" name="payment-method" id="pay-afterpay" value="afterpay_opt" class="peer appearance-none w-5 h-5 rounded-full border border-gray-300 checked:border-black focus:outline-none cursor-pointer">
@@ -570,7 +513,6 @@
                         </div>
                     </div>
 
-                    <!-- DYNAMIC SUBMIT BUTTON (Updates styling based on payment method) -->
                     <div class="mt-8">
                         <button id="main-submit-btn" class="w-full bg-black hover:bg-neutral-900 text-white font-medium py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.99] select-none tracking-tight shadow-md hover:shadow-lg border border-neutral-800">
                             <span id="submit-btn-prefix" class="tracking-widest text-[11px] font-bold uppercase text-gray-300 mr-1.5">Pay with</span>
@@ -584,7 +526,6 @@
                     </div>
                 </div>
 
-                <!-- DETAILED BAG SUMMARY AND MATH CALCULATION -->
                 <div class="m-3 p-4 rounded-2xl border border-gray-100 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.015)]">
                     <div class="flex justify-between items-baseline mb-4">
                         <h3 class="text-lg font-extrabold text-gray-900">Your Summary</h3>
@@ -594,21 +535,15 @@
                         </div>
                     </div>
 
-                    <!-- BAG EDITOR SUBPANEL (Hidden initially, lets users change items) -->
                     <div id="bag-editor-panel" class="hidden bg-gray-50 border border-gray-200 rounded-lg p-3 mb-4 space-y-2.5 transition-all">
                         <p class="text-xs font-bold text-gray-700">Choose Item to Simulate:</p>
                         <div id="product-selector-list" class="space-y-2">
-                            <!-- Populated dynamically via JS based on Coach vs Outlet tab -->
                         </div>
                     </div>
 
-                    <!-- Bag Product details (Using dynamic image & details) -->
                     <div class="flex gap-4 mb-5 border-b border-gray-100 pb-5">
-                        <!-- Image container -->
                         <div id="product-image-container" class="w-20 h-20 bg-gray-50 border border-gray-200 rounded overflow-hidden flex-shrink-0 relative">
-                            <!-- JS injections standard and fallback here -->
                         </div>
-                        <!-- Info text -->
                         <div class="flex-grow flex flex-col justify-between">
                             <div>
                                 <h4 id="summary-product-title" class="text-sm font-bold text-gray-900 leading-snug">Brooklyn Shoulder Bag 28</h4>
@@ -627,58 +562,43 @@
                         </div>
                     </div>
 
-                    <!-- Not held items indicator pill -->
                     <div class="mb-5 bg-gray-50 border border-gray-100 rounded-full px-4 py-2 flex items-center gap-2">
                         <span class="w-4 h-4 rounded-full border border-gray-500 text-[9px] text-gray-500 font-extrabold flex items-center justify-center">i</span>
                         <p class="text-[11px] text-gray-600 font-semibold">Items in the bag are not held and may sell out</p>
                     </div>
 
-                    <!-- Price Calculator Rows -->
                     <div class="space-y-3.5 border-b border-gray-200 pb-4 mb-4">
-                        <!-- Subtotal -->
                         <div class="flex justify-between text-sm">
                             <span class="text-gray-600 font-medium">Subtotal</span>
                             <span id="subtotal-amt" class="font-bold text-gray-900">$295.00</span>
                         </div>
-
-                        <!-- Giftwrap Discount Row -->
                         <div id="giftwrap-row" class="hidden justify-between text-sm transition-all duration-300">
                             <span class="text-gray-600 font-medium">Gift Wrap</span>
                             <span class="font-bold text-gray-900">$6.00</span>
                         </div>
-
-                        <!-- Promo Code Discount Row -->
                         <div id="promo-row" class="hidden justify-between text-sm transition-all duration-300">
                             <span class="text-blue-600 font-semibold">Promo Applied (<span id="promo-label"></span>)</span>
                             <span id="promo-discount-amt" class="font-bold text-blue-600">-$0.00</span>
                         </div>
-
-                        <!-- Gift Card Discount Row -->
                         <div id="discount-row" class="hidden justify-between text-sm transition-all duration-300">
                             <span class="text-red-600 font-bold">Gift Card Redeemed</span>
                             <span id="giftcard-discount-amt" class="font-bold text-red-600">-$0.00</span>
                         </div>
-
-                        <!-- Standard Shipping -->
                         <div class="flex justify-between text-sm">
                             <span class="text-gray-600 font-medium">Standard Shipping</span>
                             <span id="shipping-badge" class="font-bold text-gray-900 uppercase tracking-wider text-xs bg-gray-100 px-1.5 py-0.5 rounded">FREE</span>
                         </div>
-
-                        <!-- Estimated Tax -->
                         <div class="flex justify-between text-sm">
                             <span class="text-gray-600 font-medium">Estimated Tax</span>
                             <span id="tax-amt" class="font-bold text-gray-900">$28.76</span>
                         </div>
                     </div>
 
-                    <!-- Final Total -->
                     <div class="flex justify-between items-baseline mb-4">
                         <span class="text-[16px] font-bold text-gray-900 uppercase">Total</span>
                         <span id="final-total" class="text-[16px] font-bold text-gray-900 transition-colors duration-300">$323.76</span>
                     </div>
 
-                    <!-- Afterpay prompt under total -->
                     <div class="text-[11px] text-gray-600 text-center mb-6 py-2 border-t border-b border-gray-100">
                         <span>or as low as</span>
                         <span id="installment-bottom" class="font-bold text-gray-900">$28.01</span><span>/mo. with</span>
@@ -689,7 +609,6 @@
                         <a href="#" class="underline text-gray-500 font-semibold ml-1">Learn more</a>
                     </div>
 
-                    <!-- Quick info badges -->
                     <div class="grid grid-cols-2 gap-4 text-center text-xs py-4 border-b border-gray-100 mb-6">
                         <div class="flex flex-col items-center gap-1.5 p-2 bg-gray-50 rounded-lg">
                             <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
@@ -707,12 +626,10 @@
                         </div>
                     </div>
 
-                    <!-- Support Contact -->
                     <div class="text-center text-xs text-gray-700 mb-6">
                         <span>Need help? Contact us </span><a href="#" class="underline font-bold text-black">here</a><span>.</span>
                     </div>
 
-                    <!-- Standard Legal Footers -->
                     <p class="text-[9px] text-gray-400 text-center leading-relaxed">
                         We protect your payment and personal information to ensure a safe and secure shopping experience. 
                         <a href="#" class="underline hover:text-gray-600">Privacy Statement</a>
@@ -724,9 +641,7 @@
             </div>
         </div>
 
-        <!-- SIMULATED TRANSACTION INTERMEDIATE GATEWAY (Full panel cover) -->
         <div id="payment-gateway-loader" class="hidden absolute inset-0 bg-[#fdfdfd] z-50 flex flex-col items-center justify-center p-8 text-center">
-            <!-- Animated lock/loader visual -->
             <div class="relative w-24 h-24 mb-6">
                 <div class="absolute inset-0 border-4 border-gray-100 rounded-full"></div>
                 <div class="absolute inset-0 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
@@ -747,13 +662,10 @@
             <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-12">Encrypted under SSL 256-bit protocol</p>
         </div>
 
-        <!-- TRANSACTION SUCCESS RECEIPT SCREEN -->
         <div id="payment-success-view" class="hidden absolute inset-0 bg-white z-50 flex flex-col justify-between overflow-y-auto no-scrollbar">
-            <!-- Canvas for particle confetti explosion -->
             <canvas id="confetti-canvas" class="absolute inset-0 pointer-events-none w-full h-full"></canvas>
 
             <div class="p-6 text-center">
-                <!-- Checkmark inside beautiful pulse green ring -->
                 <div class="w-16 h-16 bg-green-500 rounded-full text-white flex items-center justify-center mx-auto my-6 relative pulse-effect">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
@@ -767,7 +679,6 @@
                     Hi <span id="receipt-customer-name" class="font-bold text-gray-900">Jess</span>, thank you for your payment! A receipt has been dispatched to <span class="font-medium text-gray-950 underline" id="receipt-email">whfjess@gmail.com</span>.
                 </p>
 
-                <!-- Order Receipt Card Details -->
                 <div class="bg-[#f9fafb] rounded-xl border border-gray-100 p-4 mt-6 text-left space-y-3">
                     <div class="flex justify-between text-xs pb-2 border-b border-gray-100">
                         <span class="text-gray-400 uppercase tracking-wider">Order Reference</span>
@@ -791,7 +702,6 @@
                     </div>
                 </div>
 
-                <!-- Estimated Delivery Card -->
                 <div class="bg-gray-50 rounded-xl p-4 mt-3 text-left flex items-center gap-3">
                     <div class="text-2xl">📦</div>
                     <div>
@@ -801,7 +711,6 @@
                 </div>
             </div>
 
-            <!-- Footer Return Actions -->
             <div class="p-6 mt-auto border-t border-gray-100">
                 <button onclick="resetCheckout()" class="w-full bg-black hover:bg-gray-900 text-white font-bold text-xs py-3.5 rounded-full uppercase tracking-wider transition">
                     Keep Simulating / Shop Again
@@ -813,7 +722,6 @@
         </div>
     </div>
 
-    <!-- SCRIPT LOGIC FOR DYNAMIC PRICE UPDATES AND FORM CONTROLS -->
     <script>
         // Store Database & Product Banks
         const STORE_THEMES = {
@@ -950,26 +858,19 @@
             redeemBtn.innerText = 'Redeem';
 
             if (storeKey === 'coach') {
-                // Coach Aesthetics
                 tabCoach.className = "tab-active w-[140px] h-full flex items-center justify-center cursor-pointer";
                 tabOutlet.className = "w-1/2 bg-[#1c1c1c] h-full flex items-center justify-start pl-6 cursor-pointer";
                 headerBar.className = "bg-[#1c1c1c] pt-2.5 px-3 border-b border-gray-200 sticky top-0 z-50 transition-colors";
                 outletFlashBanner.classList.add('hidden');
-                
-                // Select default Coach product
                 currentProduct = STORE_THEMES.coach.products[0];
             } else {
-                // Outlet Aesthetics
                 tabOutlet.className = "tab-active w-[140px] h-full flex items-center justify-center cursor-pointer";
                 tabCoach.className = "w-1/2 bg-[#1c1c1c] h-full flex items-center justify-start pl-6 cursor-pointer";
                 headerBar.className = "bg-red-950 pt-2.5 px-3 border-b border-gray-200 sticky top-0 z-50 transition-colors";
                 outletFlashBanner.classList.remove('hidden');
-
-                // Select default Outlet product
                 currentProduct = STORE_THEMES.outlet.products[0];
             }
 
-            // Repopulate active bag product listings in background panel
             if (!document.getElementById('bag-editor-panel').classList.contains('hidden')) {
                 renderProductSelectors();
             }
@@ -979,20 +880,17 @@
 
         // --- DETAILED MATH CALCULATION AND RENDER ENGINE ---
         function renderProductSummary() {
-            // Update Core titles and tags
             summaryProductTitle.innerText = currentProduct.title;
             summaryProductQty.innerText = quantity;
             cartItemCount.innerText = quantity;
             cartQtyIndicator.innerText = quantity;
 
-            // Render prices
             const itemBasePrice = currentProduct.price;
             summaryProductPrice.innerText = `$${itemBasePrice.toFixed(2)}`;
 
             const subtotal = itemBasePrice * quantity;
             subtotalAmt.innerText = `$${subtotal.toFixed(2)}`;
 
-            // Promo codes calculation
             if (activePromoCode) {
                 promoRow.classList.remove('hidden');
                 promoLabel.innerText = activePromoCode;
@@ -1001,8 +899,7 @@
                 promoRow.classList.add('hidden');
             }
 
-            // Shipping
-            let shippingFee = 0; // standard Coach delivers free above $75
+            let shippingFee = 0; 
             const shippingBadge = document.getElementById('shipping-badge');
             if (subtotal >= 75) {
                 shippingBadge.innerText = "FREE";
@@ -1013,7 +910,6 @@
                 shippingBadge.className = "font-bold text-gray-900 text-xs";
             }
 
-            // Gift Wrap Option
             let giftwrapCost = 0;
             if (isGiftwrapAdded) {
                 giftwrapCost = 6.00;
@@ -1022,17 +918,12 @@
                 giftwrapRow.classList.add('hidden');
             }
 
-            // Calculations pre-tax
             const discountableBase = Math.max(0, subtotal - promoDiscountValue);
-            
-            // Tax: California standard estimated ~9.75%
             const estTax = discountableBase * 0.0975;
             taxAmt.innerText = `$${estTax.toFixed(2)}`;
 
-            // Total before Gift Card
             let intermediateTotal = discountableBase + shippingFee + giftwrapCost + estTax;
 
-            // Apply Gift Card
             let appliedDiscount = 0;
             if (appliedGiftCardBalance > 0) {
                 discountRow.classList.remove('hidden');
@@ -1044,24 +935,19 @@
 
             const finalTotalValue = Math.max(0, intermediateTotal - appliedDiscount);
 
-            // Update Total Displays
             finalTotal.innerText = `$${finalTotalValue.toFixed(2)}`;
             summaryHeaderPrice.innerText = `$${finalTotalValue.toFixed(2)}`;
 
-            // Dynamic Installment calculations (Affirm & Afterpay Math)
             const dividedInst = (finalTotalValue / 4).toFixed(2);
             installmentAmt.innerText = `$${dividedInst}`;
             installmentBottom.innerText = `$${dividedInst}`;
 
-            // Update product image container with custom styling or canvas crochet SVGs
             renderDynamicProductThumbnail();
         }
 
-        // Increment or decrement quantity
         function changeQuantity(offset) {
             quantity = Math.max(1, quantity + offset);
             
-            // Recompute active promo values if active
             if (activePromoCode === 'COACH20') {
                 promoDiscountValue = (currentProduct.price * quantity) * 0.20;
             } else if (activePromoCode === 'WELCOME10') {
@@ -1071,7 +957,6 @@
             renderProductSummary();
         }
 
-        // Dynamic Product Selector in the collapsible drawer
         function toggleBagEditor() {
             const panel = document.getElementById('bag-editor-panel');
             const isHidden = panel.classList.contains('hidden');
@@ -1115,7 +1000,6 @@
             const found = storeData.products.find(p => p.id === prodId);
             if (found) {
                 currentProduct = found;
-                // reset promo calculation
                 if (activePromoCode === 'COACH20') {
                     promoDiscountValue = (currentProduct.price * quantity) * 0.20;
                 } else if (activePromoCode === 'WELCOME10') {
@@ -1126,7 +1010,6 @@
             }
         }
 
-        // Gift wrap toggle
         function toggleGiftwrap() {
             isGiftwrapAdded = !isGiftwrapAdded;
             document.getElementById('giftwrap-btn').innerText = isGiftwrapAdded ? 'Remove' : 'Add';
@@ -1138,21 +1021,17 @@
             editAddressBtn.addEventListener('click', () => {
                 isEditingAddress = !isEditingAddress;
                 if (isEditingAddress) {
-                    // Turn on Editable inputs
                     setFormReadonly(false);
                     editAddressBtn.innerText = "Save";
                     editAddressBtn.className = "text-xs font-bold text-white bg-black rounded px-2.5 py-1 hover:bg-gray-800 transition-colors";
                 } else {
-                    // Validation pre-save
                     if (!validateDeliveryDetails()) {
-                        isEditingAddress = true; // prevent lock
+                        isEditingAddress = true; 
                         return;
                     }
-                    // Complete Save Actions
                     setFormReadonly(true);
                     editAddressBtn.innerText = "Edit";
                     editAddressBtn.className = "text-xs font-bold text-black border border-gray-300 rounded px-2.5 py-1 hover:bg-gray-50 transition-colors";
-                    // Update username dynamically
                     welcomeUsername.innerText = `${inputFname.value} ${inputLname.value}`;
                 }
             });
@@ -1179,7 +1058,6 @@
         }
 
         function validateDeliveryDetails() {
-            // Simple validation alerts
             if (!inputEmail.value.includes('@')) {
                 showSimpleFormAlert("Please enter a valid email address.");
                 return false;
@@ -1204,7 +1082,6 @@
         }
 
         function showSimpleFormAlert(message) {
-            // Injects a temporary error alert directly under Delivery title
             const errorBox = document.createElement('div');
             errorBox.className = "bg-red-50 text-red-800 text-xs font-semibold p-2 rounded border border-red-200 mt-2 mb-2 animate-bounce";
             errorBox.innerText = message;
@@ -1225,7 +1102,6 @@
                     selectedPaymentMethod = e.target.value;
                     updateSubmitButtonText();
 
-                    // Drawer triggers
                     if (selectedPaymentMethod === 'card') {
                         ccFormWrapper.classList.remove('hidden');
                         ccFormWrapper.classList.add('block');
@@ -1243,15 +1119,11 @@
             });
         }
 
-        // Quick Express click mapping
         function selectExpressPayment(methodKey) {
             const radio = document.getElementById(`pay-${methodKey}`);
             if (radio) {
                 radio.checked = true;
-                // trigger change manually
                 radio.dispatchEvent(new Event('change'));
-                
-                // Scroll beautifully directly to the main checkout CTA button
                 mainSubmitBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
@@ -1263,12 +1135,10 @@
             const appleLogo = document.getElementById('submit-btn-apple-logo');
             const flexContainer = appleLogo.parentNode;
             
-            // Reset default visibility and classes
             appleLogo.style.display = "inline-block";
             btnPrefix.style.display = "inline-block";
             flexContainer.style.display = "flex";
             
-            // Standard button wrapper styling
             mainSubmitBtn.className = "w-full bg-black hover:bg-neutral-900 text-white font-medium py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.99] select-none tracking-tight shadow-md hover:shadow-lg border border-neutral-800";
 
             if (selectedPaymentMethod === 'applepay') {
@@ -1308,7 +1178,6 @@
                 btnText.innerText = "Afterpay";
                 btnText.className = "font-extrabold text-sm tracking-tight text-[#4be475]";
             } else {
-                // Card payment
                 appleLogo.style.display = "none";
                 btnPrefix.innerText = "PLACE ORDER";
                 btnPrefix.className = "tracking-wider text-xs font-bold uppercase text-gray-200";
@@ -1319,7 +1188,6 @@
 
         // --- PROMO CODE LOGIC ---
         function initPromoListeners() {
-            // Apply Promo toggle
             promoHeader.addEventListener('click', () => {
                 const isHidden = promoBody.classList.contains('hidden');
                 if (isHidden) {
@@ -1363,13 +1231,11 @@
 
         // --- GIFT CARD INTERACTIVES & AUTO FORMATTING ---
         function initGiftCardAutoFormat() {
-            // Gift Card Auto-Format (Formatting: 4-4-4-4-3)
             giftCardInput.addEventListener('input', (e) => {
-                let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/g, ''); // Digits only
+                let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/g, ''); 
                 if (value.length > 19) {
                     value = value.substring(0, 19);
                 }
-                // Add spacing beautifully
                 const parts = [];
                 for (let i = 0; i < value.length; i += 4) {
                     parts.push(value.substring(i, i + 4));
@@ -1377,7 +1243,6 @@
                 e.target.value = parts.join(' ');
             });
 
-            // Toggle gift card accordion expansion
             giftcardHeader.addEventListener('click', () => {
                 const isHidden = giftcardBody.classList.contains('hidden');
                 if (isHidden) {
@@ -1389,10 +1254,8 @@
                 }
             });
 
-            // Redeem action
             redeemBtn.addEventListener('click', () => {
                 if (appliedGiftCardBalance > 0) {
-                    // Remove mode
                     appliedGiftCardBalance = 0;
                     giftCardInput.value = '';
                     giftCardPin.value = '';
@@ -1406,7 +1269,7 @@
 
                 const cleanDigits = giftCardInput.value.replace(/\s+/g, '');
                 if (cleanDigits.length === 19) {
-                    appliedGiftCardBalance = 300.00; // Let's award a dynamic $300 balance
+                    appliedGiftCardBalance = 300.00; 
                     redeemNotification.className = "mt-3 px-3 py-2.5 rounded text-xs font-semibold bg-green-50 text-green-800 border border-green-200 block animate-fade-in";
                     redeemNotification.innerHTML = `
                         <div class="flex items-center gap-1.5">
@@ -1420,7 +1283,6 @@
                     redeemBtn.innerText = 'Remove Gift Card';
                     renderProductSummary();
                 } else {
-                    // Display error message
                     redeemNotification.className = "mt-3 px-3 py-2.5 rounded text-xs font-semibold bg-red-50 text-red-800 border border-red-200 block";
                     redeemNotification.innerHTML = `
                         <div class="flex items-center gap-1.5">
@@ -1448,15 +1310,12 @@
             const pName = document.getElementById('card-preview-name');
             const pExpiry = document.getElementById('card-preview-expiry');
             const pCvv = document.getElementById('card-preview-cvv');
-            const pBrand = document.getElementById('card-preview-brand');
             const pLogo = document.getElementById('card-preview-logo');
             const cardInnerBox = document.getElementById('card-inner-box');
 
-            // Format credit card number and detect brand
             ccNumber.addEventListener('input', (e) => {
                 let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/g, '');
                 
-                // Detect card type
                 if (value.startsWith('4')) {
                     pLogo.innerText = 'VISA';
                     pLogo.className = 'font-bold text-xs bg-blue-600 px-1.5 py-0.5 rounded text-white';
@@ -1471,7 +1330,6 @@
                     pLogo.className = 'font-bold text-xs bg-white/20 px-1.5 py-0.5 rounded text-white';
                 }
 
-                // Chunk space
                 const chunks = [];
                 for (let i = 0; i < value.length; i += 4) {
                     chunks.push(value.substring(i, i + 4));
@@ -1480,12 +1338,10 @@
                 pNumber.innerText = e.target.value || '•••• •••• •••• ••••';
             });
 
-            // Cardholder text sync
             ccName.addEventListener('input', (e) => {
                 pName.innerText = e.target.value.toUpperCase() || 'JESS BRANT';
             });
 
-            // Expiry helper MM/YY
             ccExpiry.addEventListener('input', (e) => {
                 let val = e.target.value.replace(/\//g, '').replace(/[^0-9]/g, '');
                 if (val.length > 2) {
@@ -1495,12 +1351,10 @@
                 pExpiry.innerText = e.target.value || '12/28';
             });
 
-            // CVV Sync and Rotations
             ccCvv.addEventListener('input', (e) => {
                 pCvv.innerText = e.target.value || '•••';
             });
 
-            // Rotate card to CVV back on Focus
             ccCvv.addEventListener('focus', () => {
                 cardInnerBox.classList.add('card-flipped');
             });
@@ -1512,7 +1366,6 @@
         // --- SUBMIT CHECKOUT TRANSACTION FLOW ---
         function initSubmitActionEngine() {
             mainSubmitBtn.addEventListener('click', () => {
-                // If editing address, force save
                 if (isEditingAddress) {
                     if (!validateDeliveryDetails()) return;
                     setFormReadonly(true);
@@ -1520,7 +1373,6 @@
                     isEditingAddress = false;
                 }
 
-                // If Credit Card chosen, check fields are valid
                 if (selectedPaymentMethod === 'card') {
                     const number = document.getElementById('cc-number').value.replace(/\s+/g, '');
                     if (number.length < 15) {
@@ -1529,7 +1381,6 @@
                     }
                 }
 
-                // Trigger immersive connecting sequence
                 runSimulatedGateway();
             });
         }
@@ -1540,7 +1391,6 @@
             const loaderSubtitle = document.getElementById('gateway-status-subtitle');
             const progress = document.getElementById('gateway-progress-bar');
 
-            // Set dynamic receipt details before loader starts
             document.getElementById('receipt-store-title').innerText = currentStore === 'coach' ? 'COACH NEW YORK' : 'COACH OUTLET';
             document.getElementById('receipt-customer-name').innerText = inputFname.value;
             document.getElementById('receipt-email').innerText = inputEmail.value;
@@ -1548,7 +1398,6 @@
             document.getElementById('receipt-address').innerText = `${inputAddress.value}, ${inputCity.value}`;
             document.getElementById('receipt-total').innerText = finalTotal.innerText;
 
-            // Gateway names
             const methodsMap = {
                 card: 'Credit Card',
                 paypal: 'PayPal Wallet',
@@ -1560,11 +1409,9 @@
             };
             document.getElementById('receipt-gateway').innerText = methodsMap[selectedPaymentMethod];
 
-            // Show full screen gateway overlay
             loader.classList.remove('hidden');
             progress.style.width = '10%';
 
-            // Interactive phased loading timeouts
             setTimeout(() => {
                 progress.style.width = '40%';
                 loaderTitle.innerText = "Authorizing Funds";
@@ -1583,20 +1430,15 @@
                 loaderSubtitle.innerText = "Almost done. Printing electronic invoice details...";
             }, 4000);
 
-            // Finalizing success state
             setTimeout(() => {
                 loader.classList.add('hidden');
                 document.getElementById('payment-success-view').classList.remove('hidden');
-                
-                // Fire glorious mock receipt confetti!
                 startConfettiExplosion();
             }, 5000);
         }
 
         function resetCheckout() {
-            // Re-lock success view
             document.getElementById('payment-success-view').classList.add('hidden');
-            // Reset bag qty
             quantity = 1;
             renderProductSummary();
         }
@@ -1607,7 +1449,8 @@
             const miniKey = currentProduct.imgKey;
             
             if (miniKey === 'brooklyn') {
-                container.innerHTML = `<img src="input_file_0.png" alt="${currentProduct.title}" class="w-full h-full object-cover relative z-10" id="main-brooklyn-img">`;
+                // FIXED: Placed your custom uploaded filename here
+                container.innerHTML = `<img src="cdz39_b4l38_a0.jpg" alt="${currentProduct.title}" class="w-full h-full object-cover relative z-10" id="main-brooklyn-img">`;
                 const img = document.getElementById('main-brooklyn-img');
                 if (img) {
                     img.onerror = function() {
@@ -1620,7 +1463,6 @@
             }
         }
 
-        // Colorful striped or styled luxury representations of bags via pure inline SVG
         function getDetailedProductSvg(key) {
             if (key === 'brooklyn') {
                 return `
@@ -1640,7 +1482,6 @@
                 return `
                     <svg class="w-full h-full" viewBox="0 0 100 100">
                         <rect width="100" height="100" fill="#f4eae1" />
-                        <!-- Golden signature lock detail -->
                         <path d="M 30 50 Q 50 15 70 50 Z" fill="none" stroke="#222" stroke-width="4"/>
                         <circle cx="50" cy="55" r="8" fill="#d4af37" />
                         <rect x="47" y="55" width="6" height="14" rx="2" fill="#d4af37" />
@@ -1651,7 +1492,6 @@
                 return `
                     <svg class="w-full h-full" viewBox="0 0 100 100">
                         <rect width="100" height="100" fill="#2a1e17" />
-                        <!-- Luggage stripes -->
                         <rect x="20" y="0" width="12" height="100" fill="#8d5b3d" opacity="0.4"/>
                         <rect x="68" y="0" width="12" height="100" fill="#8d5b3d" opacity="0.4"/>
                         <circle cx="50" cy="50" r="18" fill="#15100c" />
@@ -1667,98 +1507,3 @@
                         <text x="50" y="55" font-family="'Times New Roman', serif" font-weight="bold" font-size="6" fill="#fff" text-anchor="middle">ROWAN</text>
                     </svg>
                 `;
-            } else if (key === 'wristlet') {
-                return `
-                    <svg class="w-full h-full" viewBox="0 0 100 100">
-                        <rect width="100" height="100" fill="#1c1917" />
-                        <rect x="10" y="30" width="80" height="50" rx="4" fill="#a8a29e" />
-                        <!-- Golden strap zipper key line -->
-                        <line x1="8" y1="35" x2="8" y2="90" stroke="#d4af37" stroke-width="3" />
-                        <text x="50" y="60" font-family="sans-serif" font-weight="900" font-size="6" fill="#1c1917" text-anchor="middle" letter-spacing="1">ZIP</text>
-                    </svg>
-                `;
-            } else { // duffle
-                return `
-                    <svg class="w-full h-full" viewBox="0 0 100 100">
-                        <rect width="100" height="100" fill="#e2e8f0" />
-                        <path d="M 20 20 L 80 20 L 65 80 L 35 80 Z" fill="#b91c1c" />
-                        <line x1="50" y1="10" x2="50" y2="20" stroke="#1e293b" stroke-width="4" />
-                        <text x="50" y="52" font-family="'Times New Roman', serif" font-weight="bold" font-size="7" fill="#fff" text-anchor="middle">VAL</text>
-                    </svg>
-                `;
-            }
-        }
-
-        function getMiniThumbnailSvg(key) {
-            // Smaller inline renderers for lists
-            if (key === 'brooklyn') {
-                const uniqueId = 'thumb-' + Math.floor(Math.random() * 1000000);
-                setTimeout(() => {
-                    const imgEl = document.getElementById(uniqueId);
-                    if (imgEl) {
-                        imgEl.onerror = function() {
-                            this.style.display = 'none';
-                            this.parentNode.innerHTML = getDetailedProductSvg('brooklyn');
-                        };
-                    }
-                }, 0);
-                return `<div class="w-full h-full relative"><img id="${uniqueId}" src="input_file_0.png" class="w-full h-full object-cover absolute inset-0 z-10"></div>`;
-            }
-            return `<div class="w-full h-full">${getDetailedProductSvg(key)}</div>`;
-        }
-
-        // --- FULL CONFETTI ENGINE FOR IMMERSIVE CELEBRATION ---
-        function startConfettiExplosion() {
-            const canvas = document.getElementById('confetti-canvas');
-            const ctx = canvas.getContext('2d');
-            canvas.width = canvas.parentNode.clientWidth;
-            canvas.height = canvas.parentNode.clientHeight;
-
-            let particles = [];
-            const colors = ['#f59e0b', '#10b981', '#3b82f6', '#ec4899', '#8b5cf6', '#ef4444'];
-
-            for (let i = 0; i < 120; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height - canvas.height,
-                    r: Math.random() * 4 + 2,
-                    d: Math.random() * canvas.height,
-                    color: colors[Math.floor(Math.random() * colors.length)],
-                    tilt: Math.random() * 12 - 6,
-                    tiltAngleIncremental: Math.random() * 0.07 + 0.02,
-                    tiltAngle: 0
-                });
-            }
-
-            let animationId;
-            function drawConfetti() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach((p, idx) => {
-                    p.tiltAngle += p.tiltAngleIncremental;
-                    p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
-                    p.x += Math.sin(p.tiltAngle);
-                    p.tilt = Math.sin(p.tiltAngle - idx/3) * 10;
-
-                    ctx.beginPath();
-                    ctx.lineWidth = p.r;
-                    ctx.strokeStyle = p.color;
-                    ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
-                    ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
-                    ctx.stroke();
-                });
-
-                // Filter out of bounds particles
-                particles = particles.filter(p => p.y < canvas.height);
-                
-                if (particles.length > 0) {
-                    animationId = requestAnimationFrame(drawConfetti);
-                } else {
-                    cancelAnimationFrame(animationId);
-                }
-            }
-
-            drawConfetti();
-        }
-    </script>
-</body>
-</html>
