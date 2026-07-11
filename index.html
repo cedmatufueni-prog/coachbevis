@@ -68,10 +68,10 @@
 </head>
 <body class="min-h-screen flex justify-center items-start md:py-6">
 
-  <!-- Main Mobile Container (Reference: IMG_0320.jpg / IMG_0323.jpeg) -->
+  <!-- Main Mobile Container -->
   <main class="w-full max-w-md bg-white min-h-screen md:min-h-[900px] md:shadow-xl md:rounded-3xl overflow-hidden flex flex-col justify-between border border-gray-100">
     
-    <!-- Top Header matching IMG_0323.jpeg with slightly larger logo -->
+    <!-- Top Header -->
     <header class="border-b border-gray-200 px-4 py-3 bg-white sticky top-0 z-50 flex justify-between items-center">
       <div class="flex items-center space-x-2">
         <!-- Brand Logo with no-referrer policy to bypass image blocks -->
@@ -88,17 +88,17 @@
         <span class="text-[14px] text-gray-800 font-bold pl-2 border-l border-gray-300 tracking-wide mt-0.5">Secure Checkout</span>
       </div>
       
-      <!-- Right Side Shopping Bag Icon (Recreated exactly from ScreenShot Tool -20260707195254.png) -->
+      <!-- Right Side Shopping Bag Icon -->
       <div class="relative cursor-pointer hover:opacity-80 transition-opacity pr-1 mt-1 select-none">
         <svg class="w-[20px] h-[23px]" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- Arched Shopping Bag Handle -->
           <path d="M7 6C7 4.5 7.8 3.5 10 3.5C12.2 3.5 13 4.5 13 6" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
-          <!-- Trapezoidal Shopping Bag Body (wider at top, narrower at bottom, flat lines) -->
+          <!-- Trapezoidal Shopping Bag Body -->
           <path d="M3.5 6H16.5L14.5 20H5.5L3.5 6Z" fill="white" stroke="black" stroke-width="1.8" stroke-linejoin="miter"/>
           <!-- Number 1 centered inside -->
           <text x="10" y="15.5" fill="black" font-size="9" font-family="system-ui, -apple-system, sans-serif" font-weight="900" text-anchor="middle">1</text>
         </svg>
-        <!-- Blue Notification Badge Dot (Centered on top-right corner vertex) -->
+        <!-- Blue Notification Badge Dot -->
         <div class="absolute -top-[1.5px] -right-[2px] w-[10px] h-[10px] bg-[#4f85e2] rounded-full"></div>
       </div>
     </header>
@@ -106,7 +106,7 @@
     <!-- Scrollable Checkout Content -->
     <div class="flex-1 overflow-y-auto px-5 py-4 space-y-6">
       
-      <!-- Pickup in Store Details Section matching IMG_0323.jpeg with identical font weight to Payment method -->
+      <!-- Pickup in Store Details Section -->
       <section class="space-y-4">
         <div class="flex items-center space-x-3">
           <!-- Store Icon Graphic matching the pink/coral Ulta store building -->
@@ -129,7 +129,7 @@
               <text x="24" y="11" fill="#ee5b4b" font-size="5" font-family="Arial, sans-serif" font-weight="900" letter-spacing="0.5" text-anchor="middle">ULTA</text>
             </svg>
           </div>
-          <!-- Pickup in store header - updated to match the same weight and style as Payment Method -->
+          <!-- Pickup in store header - matches weight and style of Payment Method -->
           <h2 class="font-bold text-xl text-gray-950 tracking-tight">Pickup in store</h2>
         </div>
 
@@ -169,14 +169,14 @@
           </div>
         </div>
 
-        <!-- 1 Item section matching IMG_0323.jpeg -->
+        <!-- 1 Item section with transparent, borderless display wrapper -->
         <div class="border-t border-gray-100 pt-3.5">
           <div class="flex justify-between items-center mb-2.5">
             <p class="text-[10px] font-bold tracking-wider text-gray-400 uppercase">1 ITEM</p>
             <button class="text-xs font-extrabold text-gray-950 underline hover:opacity-75">Edit bag</button>
           </div>
           <div class="flex items-center space-x-4">
-            <!-- Styling tool image container (No background or borders, completely transparent to blend seamlessly) -->
+            <!-- Styling tool image container (Totally transparent background, no border) -->
             <div class="w-20 h-20 bg-transparent flex items-center justify-center" id="item-image-container">
               <img 
                 id="item-image" 
@@ -194,9 +194,8 @@
       <!-- Gray segment divider block -->
       <div class="-mx-5 h-2 bg-gray-50 border-y border-gray-100"></div>
 
-      <!-- PAYMENT METHODS SECTION (RECREATED TO LOOK EXACTLY LIKE IMG_0324.jpeg) -->
+      <!-- PAYMENT METHODS SECTION -->
       <section class="space-y-4 pt-1">
-        <!-- Made Payment method headline slightly thinner -->
         <h3 class="font-bold text-xl text-gray-950 tracking-tight">Payment method</h3>
 
         <!-- Borderless List with Exact Dividers -->
@@ -225,8 +224,6 @@
             </label>
           </div>
 
-          <!-- NO DIVIDER BETWEEN ULTA CARD AND CREDIT CARD AS PER IMG_0324.jpeg -->
-
           <!-- Method 2: Credit Card -->
           <div class="flex items-start select-none">
             <div class="shrink-0 mt-1">
@@ -235,7 +232,7 @@
             <label for="pay-cc" class="ml-3.5 flex-1 cursor-pointer">
               <div class="flex justify-between items-center">
                 <span class="text-[14px] font-bold text-gray-950">Credit card</span>
-                <!-- Logo row matching IMG_0324.jpeg -->
+                <!-- Logo row -->
                 <div class="flex items-center space-x-1">
                   <!-- Visa -->
                   <div class="w-7 h-4 border border-gray-200 rounded-[1px] bg-white flex items-center justify-center p-[1px]">
@@ -299,7 +296,6 @@
             <label for="pay-klarna" class="ml-3.5 flex-1 flex justify-between items-center cursor-pointer">
               <span class="text-[14px] font-bold text-gray-950">Klarna</span>
               
-              <!-- Fixed width to prevent collapsing, dynamic fallback, matches IMG_0324.jpeg -->
               <div class="flex items-center min-h-[18px]">
                 <img 
                   id="klarna-logo"
@@ -324,7 +320,6 @@
             <label for="pay-paypal" class="ml-3.5 flex-1 flex justify-between items-center cursor-pointer">
               <span class="text-[14px] font-bold text-gray-950">PayPal</span>
               
-              <!-- Fixed width to prevent collapsing, dynamic fallback, matches IMG_0324.jpeg -->
               <div class="flex items-center min-h-[22px]">
                 <img 
                   id="paypal-logo"
@@ -368,7 +363,7 @@
                 <div class="w-[18px] h-[18px] bg-[#00D632] rounded-[5px] flex items-center justify-center shrink-0 shadow-sm">
                   <span class="text-white font-black text-[12px] leading-none select-none" style="font-family: system-ui, -apple-system, sans-serif;">$</span>
                 </div>
-                <!-- Clean, thinner black text to match lg-68a7a69c25742-Afterpay.webp -->
+                <!-- Clean, thinner black text -->
                 <span class="font-semibold text-[14px] text-black tracking-tight leading-none" style="font-family: system-ui, -apple-system, sans-serif;">Afterpay</span>
               </div>
             </label>
@@ -380,7 +375,7 @@
       <!-- Gray segment divider block -->
       <div class="-mx-5 h-2 bg-gray-50 border-y border-gray-100"></div>
 
-      <!-- ADD GIFT CARD SECTION (MATCHES IMG_0327.jpeg EXACTLY - BUTTON & COUNTERS REMOVED) -->
+      <!-- ADD GIFT CARD SECTION (MATCHES IMG_0327.jpeg) -->
       <section class="space-y-4">
         <div class="flex justify-between items-center cursor-pointer select-none" id="giftcard-toggle">
           <h3 class="font-bold text-xl text-gray-950 tracking-tight">Add gift cards</h3>
@@ -388,7 +383,7 @@
         </div>
 
         <div class="space-y-4" id="giftcard-body">
-          <!-- Information text exactly matching IMG_0327.jpeg blue text and circular info icon -->
+          <!-- Information text -->
           <div class="flex items-center space-x-2 text-[#2a59c3]">
             <span class="text-[14px] font-semibold flex items-center leading-none">
               <span class="mr-1.5 inline-flex items-center justify-center w-4 h-4 border border-[#2a59c3] rounded-full text-[10px] font-extrabold font-serif">i</span>
@@ -427,7 +422,7 @@
             <!-- Status Alert Banner -->
             <div id="success-banner" class="hidden rounded-xl p-3 text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-100 flex items-center space-x-2 animate-fadeIn">
               <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-              <span>Success! Your -$500.00 gift card discount has been applied.</span>
+              <span>Success! Your -$200.00 gift card discount has been applied.</span>
             </div>
           </div>
         </div>
@@ -436,7 +431,7 @@
       <!-- Thin horizontal gray divider line directly under input section -->
       <div class="border-t border-gray-200 my-4"></div>
 
-      <!-- ULTA BEAUTY REWARDS PROMOTION CARD (MATCHES ScreenShot Tool -20260711171045.png) -->
+      <!-- ULTA BEAUTY REWARDS PROMOTION CARD -->
       <section class="bg-[#FFF9F5] rounded-2xl p-5 border border-rose-100/30 flex flex-col space-y-4">
         <!-- Top Row: Icon + Texts aligned next to each other -->
         <div class="flex items-start space-x-4">
@@ -464,7 +459,7 @@
         </div>
       </section>
 
-      <!-- ORDER SUMMARY SECTION (MATCHES ScreenShot Tool -20260711171045.png WITH MATCHING TITLE WEIGHT) -->
+      <!-- ORDER SUMMARY SECTION -->
       <section class="pt-5 space-y-4">
         <h3 class="font-bold text-xl text-gray-950 tracking-tight">Order summary</h3>
 
@@ -475,10 +470,10 @@
             <span class="font-bold text-gray-900">$199.99</span>
           </div>
 
-          <!-- Dynamic Discount Slot - Thinner label text, value stays red -->
+          <!-- Dynamic Discount Slot - Thinner label text (black), value stays red -->
           <div id="discount-row" class="hidden justify-between text-gray-950 font-medium transition-all duration-300">
             <span class="font-medium text-gray-950">Discount</span>
-            <span class="text-red-600 font-bold">-$500.00</span>
+            <span class="text-red-600 font-bold">-$200.00</span>
           </div>
 
           <!-- Store pick up -->
@@ -510,7 +505,7 @@
         </div>
       </section>
 
-      <!-- PLACE ORDER ACTION AND LEGALS (MATCHES IMG_0327.jpeg) -->
+      <!-- PLACE ORDER ACTION AND LEGALS -->
       <section class="space-y-4 pt-1">
         <p class="text-[11.5px] text-gray-500 text-center leading-relaxed font-semibold">
           By placing an order, you agree to the ULTA.com's <br>
@@ -519,12 +514,12 @@
           <a href="#" class="underline font-bold text-gray-950 hover:text-gray-800">Privacy Policy</a>
         </p>
 
-        <!-- Place Order Button (Matching exact pill shape and color footprint from IMG_0327.jpeg) -->
+        <!-- Place Order Button -->
         <button class="w-full bg-[#f6f4ee] hover:bg-[#eae7e0] active:scale-[0.99] border border-gray-300/80 text-gray-700 text-[15px] font-bold py-4 px-6 rounded-full transition-all shadow-sm flex justify-center items-center">
           <span>Place order</span>
         </button>
 
-        <!-- Bag ID update (matches IMG_0327.jpeg value 7658059481) -->
+        <!-- Bag ID update -->
         <p class="text-xs text-gray-400 text-center font-bold tracking-wide">Bag ID: 7658059481</p>
       </section>
 
@@ -673,15 +668,15 @@
         return;
       }
 
-      // Valid card and pin condition met:
+      // Valid card (16 digits) and PIN (8 digits) condition met:
       successBanner.classList.remove('hidden');
       
       // Reveal Discount row
       discountRow.classList.remove('hidden');
       discountRow.classList.add('flex');
 
-      // Change total to $0.00 with solid black text
-      estimatedTotal.textContent = "$0.00";
+      // Change total to $19.49 with solid black text
+      estimatedTotal.textContent = "$19.49";
       estimatedTotal.className = "font-extrabold text-[16px] text-black transition-all duration-300";
     }
 
@@ -704,7 +699,7 @@
       }
     });
 
-    // Fallback Renderer for Klarna Logo (matches images.png / IMG_0324.jpeg exactly)
+    // Fallback Renderer for Klarna Logo
     function renderKlarnaFallback(img) {
       const svgFallback = `
         <svg class="h-[18px] w-[65px] block select-none" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
